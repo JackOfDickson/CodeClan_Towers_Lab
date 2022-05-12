@@ -21,4 +21,8 @@ public abstract class Room {
     public void addGuest(Guest guest){
         guests.add(guest);
     }
+
+    public void removeGuest(Guest guest){
+        guests.remove(guest);
+    }
 }

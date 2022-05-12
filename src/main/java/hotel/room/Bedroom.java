@@ -7,9 +7,11 @@ import java.util.ArrayList;
 public class Bedroom extends Room{
 
     private RoomType roomType;
+    private int roomNumber;
 
-    public Bedroom(RoomType roomType) {
+    public Bedroom(RoomType roomType, int roomNumber) {
         this.roomType = roomType;
+        this.roomNumber = roomNumber;
     }
 
     public RoomType getRoomType() {
