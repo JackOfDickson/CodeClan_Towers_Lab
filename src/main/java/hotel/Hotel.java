@@ -32,7 +32,8 @@ public class Hotel {
     }
 
     public void addGuestToBedroom(Bedroom bedroom, Guest guest){
-        bedroom.addGuest(guest);
+        if (bedroom.getGuests().size() < bedroom.getRoomType().getCapacity()){
+        bedroom.addGuest(guest);}
     }
 
     public void removeGuestFromBedroom(Bedroom bedroom, Guest guest){

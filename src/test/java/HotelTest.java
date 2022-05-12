@@ -54,6 +54,14 @@ public class HotelTest {
     }
 
     @Test
+    public void cannotExceedBedroomCapactiy(){
+        hotel.addBedroom(bedroom);
+        hotel.addGuestToBedroom(bedroom, guest);
+        hotel.addGuestToBedroom(bedroom, guest);
+        assertEquals(1, hotel.getBedroomAtIndex(0).getGuests().size());
+    }
+
+    @Test
     public void canRemoveGuestFromBedroom() {
         hotel.addBedroom(bedroom);
         hotel.addGuestToBedroom(bedroom, guest);
