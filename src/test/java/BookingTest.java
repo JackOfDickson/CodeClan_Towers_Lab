@@ -15,13 +15,18 @@ public class BookingTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom(RoomType.SINGLE, 1);
+        bedroom = new Bedroom(RoomType.SINGLE, 1, 67.50);
         booking = new Booking(bedroom, 5);
     }
 
     @Test
     public void hasNightsBooked(){
         assertEquals(5, booking.getNightsBooked());
+    }
+
+    @Test
+    public void hasTotalBill(){
+        assertEquals(booking.totalBill(), 337.50, 0.0);
     }
 
 }

@@ -14,7 +14,7 @@ public class BedroomTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom(RoomType.SINGLE, 1);
+        bedroom = new Bedroom(RoomType.SINGLE, 1, 67.50);
         guest = new Guest("Bob");
     }
 
@@ -32,6 +32,11 @@ public class BedroomTest {
     public void canAddGuests(){
         bedroom.addGuest(guest);
         assertEquals(1, bedroom.getGuests().size());
+    }
+
+    @Test
+    public void hasRate(){
+        assertEquals(67.50, bedroom.getRate(), 0.0);
     }
     
     

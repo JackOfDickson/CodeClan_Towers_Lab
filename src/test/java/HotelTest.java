@@ -1,3 +1,4 @@
+import hotel.Booking;
 import hotel.Guest;
 import hotel.Hotel;
 import hotel.room.Bedroom;
@@ -14,13 +15,15 @@ public class HotelTest {
     Guest guest;
     ConferenceRoom conferenceRoom;
     Bedroom bedroom;
+    Booking booking;
 
     @Before
     public void before(){
         hotel = new Hotel();
         conferenceRoom = new ConferenceRoom("Adam Room");
-        bedroom = new Bedroom(RoomType.SINGLE, 1);
+        bedroom = new Bedroom(RoomType.SINGLE, 1, 67.50);
         guest = new Guest("Bob");
+        booking = new Booking(bedroom, 5);
     }
 
     @Test
@@ -83,6 +86,6 @@ public class HotelTest {
         hotel.addGuestToConferenceRoom(conferenceRoom, guest);
         hotel.removeGuestFromConferenceRoom(conferenceRoom, guest);
         assertEquals(0, hotel.getConferenceRoomAtIndex(0).getGuests().size());
-
     }
+
 }
