@@ -1,5 +1,4 @@
 import hotel.Booking;
-import hotel.Guest;
 import hotel.room.Bedroom;
 import hotel.room.RoomType;
 import org.junit.Before;
