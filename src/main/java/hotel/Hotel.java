@@ -2,17 +2,21 @@ package hotel;
 
 import hotel.room.Bedroom;
 import hotel.room.ConferenceRoom;
+import hotel.room.DiningRoom;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Hotel {
 
     private ArrayList<Bedroom> bedroomList;
     private ArrayList<ConferenceRoom> conferenceRoomsList;
+    private HashMap<String, DiningRoom> diningRoomHashMap;
 
     public Hotel() {
         this.bedroomList = new ArrayList<>();
         this.conferenceRoomsList = new ArrayList<>();
+        this.diningRoomHashMap = new HashMap<>();
     }
 
     public ArrayList<Bedroom> getBedroomList() {
@@ -59,5 +63,15 @@ public class Hotel {
     public Booking bookRoom(Bedroom bedroom, int nightsBooked){
         Booking newBooking = new Booking(bedroom, nightsBooked);
         return newBooking;
+    }
+
+    public HashMap<String, DiningRoom> getDiningRoomHashMap() {
+        return diningRoomHashMap;
+    }
+
+    public void addDiningRoom(DiningRoom diningRoom){
+        if (!diningRoomHashMap.containsKey(diningRoom.getName())){
+            diningRoomHashMap.put(diningRoom.getName(), diningRoom);
+        }
     }
 }

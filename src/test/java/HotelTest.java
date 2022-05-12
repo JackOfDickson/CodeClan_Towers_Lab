@@ -3,6 +3,7 @@ import hotel.Guest;
 import hotel.Hotel;
 import hotel.room.Bedroom;
 import hotel.room.ConferenceRoom;
+import hotel.room.DiningRoom;
 import hotel.room.RoomType;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +17,7 @@ public class HotelTest {
     ConferenceRoom conferenceRoom;
     Bedroom bedroom;
     Booking booking;
+    DiningRoom diningRoom;
 
     @Before
     public void before(){
@@ -24,6 +26,7 @@ public class HotelTest {
         bedroom = new Bedroom(RoomType.SINGLE, 1, 67.50);
         guest = new Guest("Bob");
         booking = new Booking(bedroom, 5);
+        diningRoom = new DiningRoom("The Dining Room", 5);
     }
 
     @Test
@@ -81,11 +84,17 @@ public class HotelTest {
     }
 
     @Test
-    public void canRemoveGuestToBedroom() {
+    public void canRemoveGuestToBedroom(){
         hotel.addConferenceRoom(conferenceRoom);
         hotel.addGuestToConferenceRoom(conferenceRoom, guest);
         hotel.removeGuestFromConferenceRoom(conferenceRoom, guest);
         assertEquals(0, hotel.getConferenceRoomAtIndex(0).getGuests().size());
+    }
+
+    @Test
+    public void canAddDiningRoom(){
+        hotel.addDiningRoom(diningRoom);
+        assertEquals(1, hotel.getDiningRoomHashMap().size());
     }
 
 }
