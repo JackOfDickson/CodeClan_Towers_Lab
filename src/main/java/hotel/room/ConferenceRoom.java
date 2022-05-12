@@ -6,6 +6,9 @@ import java.util.ArrayList;
 
 public class ConferenceRoom extends Room{
 
-    public ConferenceRoom() {
+    private String name;
+
+    public ConferenceRoom(String name) {
+        this.name = name;
     }
 }

@@ -18,7 +18,7 @@ public class HotelTest {
     @Before
     public void before(){
         hotel = new Hotel();
-        conferenceRoom = new ConferenceRoom();
+        conferenceRoom = new ConferenceRoom("Adam Room");
         bedroom = new Bedroom(RoomType.SINGLE, 1);
         guest = new Guest("Bob");
     }
