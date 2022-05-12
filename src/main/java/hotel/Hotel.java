@@ -55,4 +55,9 @@ public class Hotel {
     public ConferenceRoom getConferenceRoomAtIndex(int index){
         return conferenceRoomsList.get(index);
     }
+
+    public Booking bookRoom(Bedroom bedroom, int nightsBooked){
+        Booking newBooking = new Booking(bedroom, nightsBooked);
+        return newBooking;
+    }
 }
